@@ -33,5 +33,28 @@ const tabDB = {
 				}
 			});
 		});
+	},
+	remove: (stateID) => {
+		const newStates = [];
+		storage.get(null, (result) => {
+			const states = result[tabStorageKey];
+			states.forEach((state) => {
+				if (state.stateID !== stateID) {
+					newStates.push(state);
+				}
+			});
+		});
+		const obj = {
+			tabStorageKey: newStates
+		};
+		storage.set(obj, () => {
+
+		})
+	},
+
+	reset: () => {
+		storage.clear(() => {
+
+		});
 	}
 };

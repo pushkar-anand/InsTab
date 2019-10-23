@@ -7,13 +7,17 @@ $("#save-tab").click(() => {
 	saveTabs(stateName);
 });
 
+$("#reset").click(() => {
+	tabDB.reset();
+});
+
 chrome.storage.onChanged.addListener(() => {
 	loadStateList();
 });
 
 const loadStateList = () => {
 	tabDB.retrieveAll((states) => {
-		if (states.length > 0) {
+		if (states === undefined || states.length > 0) {
 			$('.empty-list').hide();
 			$('#state-list').show();
 			states.forEach((state) => {
