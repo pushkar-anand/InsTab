@@ -1,0 +1,16 @@
+{
+  "name": "InsTab",
+  "version": "0.0.0",
+  "description": "Save the current state of tabs open in chrome.",
+  "manifest_version": 2,
+
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/icons/16x16.png",
+      "24": "assets/icons/24x24.png",
+      "32": "assets/icons/32x32.png"
+    },
+    "default_title": "InsTab",
+    "default_popup": "src/popup.html"
+  }
+}
