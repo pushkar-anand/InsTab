@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "Save the current state of tabs open in chrome.",
   "manifest_version": 2,
-
   "browser_action": {
     "default_icon": {
       "16": "assets/icons/16x16.png",
@@ -12,5 +11,10 @@
     },
     "default_title": "InsTab",
     "default_popup": "src/popup.html"
-  }
+  },
+  "permissions" : [
+    "storage",
+    "tabs"
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
 }
