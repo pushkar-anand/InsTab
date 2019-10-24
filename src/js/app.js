@@ -2,10 +2,16 @@ $(document).ready(() => {
 	loadStateList();
 });
 
+console.log("working")
+
 $("#save-tab").click(() => {
 	const stateName = prompt("Save as?");
 	saveTabs(stateName);
 });
+
+$("#delete-btn").click(() => {
+	
+})
 
 chrome.storage.onChanged.addListener(() => {
 	loadStateList();
@@ -70,3 +76,5 @@ const loadState = (stateID) => {
 		chrome.windows.create(createData);
 	});
 };
+
+tabDB.remove("VGcJ8reRoD1571935992");
