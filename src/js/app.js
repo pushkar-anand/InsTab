@@ -43,8 +43,8 @@ const loadStateList = () => {
 					loadState(state.stateID);
 				});
 				$(`#del-${state.stateID}`).click(() => {
+					$(`#${state.stateID}`).parent().parent().remove();
 					tabDB.remove(state.stateID);
-					loadStateList();
 				});
 			});
 		} else {
