@@ -33,9 +33,9 @@ const tabDB = {
 	},
 	retrieve: (stateID, callback) => {
 		storage.get(null, (result) => {
-			
+
 			const states = result[tabStorageKey];
-		
+
 			states.forEach((state) => {
 				if (state.stateID === stateID) {
 					callback(state);
@@ -43,19 +43,28 @@ const tabDB = {
 			});
 		});
 	},
-	remove: (stateID, callback) => {
-		const obj={};
-		storage.get(null, (results) => {
-			let states = results[tabStorageKey];
-			states.forEach((state, i)=>{
-				if(state.stateID === stateID){
-					states.splice(i, 1);
-					console.log(states)
-					obj[tabStorageKey] = states
-					storage.set(obj);
+	remove: (stateID) => {
+		console.log("Remove called", stateID);
+		storage.get(null, (result) => {
+			const newStates = [];
+			const states = result[tabStorageKey];
+			states.forEach((state) => {
+				console.log(`Checking ${state.stateID} == ${stateID}`);
+				if (state.stateID !== stateID) {
+					newStates.push(state);
+					console.log("Equality check failed. Pushing: ", state);
+				} else {
+					console.log("Equality check passes. Deleting: ", state);
 				}
+			});
+			const obj = {};
+			obj[tabStorageKey] = newStates;
+
+			console.log('New States: ', obj);
+			storage.set(obj, () => {
+				checkErr();
+				debug();
 			})
-			
 		});
 	},
 
@@ -64,7 +73,6 @@ const tabDB = {
 			checkErr();
 		});
 	},
-
 };
 const debug = () => {
 	storage.get(null, (result) => {

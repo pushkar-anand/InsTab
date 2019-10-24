@@ -3,15 +3,10 @@ $(document).ready(() => {
 });
 
 $("#save-btn").click(() => {
-
 	const stateName = prompt("Save as?");
 	saveTabs(stateName);
 });
 
-
-$("#delete-btn").click(() => {
-	
-})
 $("#reset-btn").click(() => {
 	tabDB.reset();
 });
