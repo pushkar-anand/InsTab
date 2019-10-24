@@ -2,12 +2,12 @@ $(document).ready(() => {
 	loadStateList();
 });
 
-$("#save-tab").click(() => {
+$("#save-btn").click(() => {
 	const stateName = prompt("Save as?");
 	saveTabs(stateName);
 });
 
-$("#reset").click(() => {
+$("#reset-btn").click(() => {
 	tabDB.reset();
 });
 
