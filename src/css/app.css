@@ -6,6 +6,17 @@
     padding: 20px;
 }
 
-a.collection-item:hover {
+/*li.collection-item:hover {
+    cursor: pointer;
+    background-color: antiquewhite;
+}*/
+
+.delete-icon i:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.load-icon i:hover {
+    color: green;
     cursor: pointer;
 }

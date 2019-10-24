@@ -1,6 +1,12 @@
 const storage = chrome.storage.local;
 const tabStorageKey = "saved_tab_state";
 
+const checkErr = () => {
+	if (chrome.runtime.lastError) {
+		console.log(chrome.runtime.lastError);
+	}
+};
+
 const tabDB = {
 	save: (state) => {
 		const obj = {};
@@ -14,13 +20,14 @@ const tabDB = {
 			} else {
 				obj[tabStorageKey] = [state];
 			}
-			storage.set(obj);
+			storage.set(obj, () => {
+				checkErr()
+			});
 		});
 	},
 	retrieveAll: (callback) => {
 		storage.get(null, (result) => {
 			const states = result[tabStorageKey];
-			console.log(states);
 			callback(states);
 		});
 	},
@@ -51,4 +58,16 @@ const tabDB = {
 			
 		});
 	},
+
+	reset: () => {
+		storage.clear(() => {
+			checkErr();
+		});
+	},
+
+};
+const debug = () => {
+	storage.get(null, (result) => {
+		console.log('Debug output: ', result);
+	})
 };

@@ -2,16 +2,20 @@ $(document).ready(() => {
 	loadStateList();
 });
 
-console.log("working")
+$("#save-btn").click(() => {
 
-$("#save-tab").click(() => {
 	const stateName = prompt("Save as?");
 	saveTabs(stateName);
 });
 
+
 $("#delete-btn").click(() => {
 	
 })
+$("#reset-btn").click(() => {
+	tabDB.reset();
+});
+
 
 chrome.storage.onChanged.addListener(() => {
 	loadStateList();
@@ -19,17 +23,33 @@ chrome.storage.onChanged.addListener(() => {
 
 const loadStateList = () => {
 	tabDB.retrieveAll((states) => {
-		if (states.length > 0) {
+		if (states !== undefined && states.length > 0) {
 			$('.empty-list').hide();
 			$('#state-list').show();
 			states.forEach((state) => {
-				const apn = `<a class="collection-item" id="${state.stateID}">${state.stateName}</a>`;
-				const selector = $(`#${state.stateID}`);
+				const apn = `<li class="collection-item">
+								<div class="state-item">
+										<span>${state.stateName}</span>
+										<a class="load-icon" id="${state.stateID}">
+											<i class="material-icons">send</i>
+										</a>
+										<a class="secondary-content delete-icon" id="del-${state.stateID}">
+											<i class="material-icons">delete</i>
+										</a>
+								</div>
+							</li>`;
+				// noinspection JSJQueryEfficiency
+				let selector = $(`#${state.stateID}`);
 				if (!(selector.length)) {
 					$('#state-list').append(apn);
+					selector = $(`#${state.stateID}`);
 				}
 				selector.click(() => {
 					loadState(state.stateID);
+				});
+				$(`#del-${state.stateID}`).click(() => {
+					tabDB.remove(state.stateID);
+					loadStateList();
 				});
 			});
 		} else {

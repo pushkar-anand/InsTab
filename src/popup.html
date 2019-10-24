@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>InsTab: Save All</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
           integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/app.css"/>
@@ -15,12 +16,15 @@
         </div>
         <div class="row">
             <p class="empty-list">No saved states.</p>
-            <div class="collection" id="state-list">
-            </div>
+            <ul class="collection" id="state-list">
+            </ul>
         </div>
         <div class="row">
             <div class="btn-wrapper">
-                <button class="btn" id="save-tab">Save Current</button>
+                <button class="btn" id="save-btn">Save Current</button>
+            </div>
+            <div class="btn-wrapper">
+                <button class="btn" id="reset-btn">Reset</button>
             </div>
         </div>
     </div>
