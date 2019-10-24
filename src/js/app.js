@@ -3,15 +3,10 @@ $(document).ready(() => {
 });
 
 $("#save-btn").click(() => {
-
 	const stateName = prompt("Save as?");
 	saveTabs(stateName);
 });
 
-
-$("#delete-btn").click(() => {
-	
-})
 $("#reset-btn").click(() => {
 	tabDB.reset();
 });
@@ -48,8 +43,8 @@ const loadStateList = () => {
 					loadState(state.stateID);
 				});
 				$(`#del-${state.stateID}`).click(() => {
+					$(`#${state.stateID}`).parent().parent().remove();
 					tabDB.remove(state.stateID);
-					loadStateList();
 				});
 			});
 		} else {
