@@ -1,0 +1,16 @@
+#ext-option {
+    height: auto;
+}
+
+.options-form {
+    padding: 10px;
+}
+
+.switch label {
+    color: black;
+    font-size: medium;
+}
+
+.btn-wrapper {
+    padding: 10px;
+}

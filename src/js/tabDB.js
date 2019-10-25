@@ -8,7 +8,7 @@ const checkErr = () => {
 };
 
 const tabDB = {
-	save: (state) => {
+	save: (state, callback) => {
 		const obj = {};
 		storage.get(null, (result) => {
 			// console.log("Results ========", result)
@@ -21,7 +21,8 @@ const tabDB = {
 				obj[tabStorageKey] = [state];
 			}
 			storage.set(obj, () => {
-				checkErr()
+				checkErr();
+				callback();
 			});
 		});
 	},

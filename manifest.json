@@ -12,6 +12,10 @@
     "default_title": "InsTab",
     "default_popup": "src/popup.html"
   },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
   "permissions" : [
     "storage",
     "tabs"
