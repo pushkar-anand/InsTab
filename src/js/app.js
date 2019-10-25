@@ -72,8 +72,7 @@ const saveTabs = (stateName) => {
 			stateName: stateName,
 			tabs: tabsData
 		};
-		console.log(stateData);
-		tabDB.save(stateData);
+		saveState(stateData);
 	});
 };
 
@@ -92,4 +91,18 @@ const loadState = (stateID) => {
 	});
 };
 
-tabDB.remove("VGcJ8reRoD1571935992");
+const saveState = (stateData) => {
+	console.log(stateData);
+	tabDB.save(stateData, () => {
+		getSavedOptions((options) => {
+			if (options[EXIT_ON_SAVE_KEY] === true) {
+				chrome.tabs.query({}, function (tabs) {
+					chrome.tabs.create({});
+					for (let i = 0; i < tabs.length; i++) {
+						chrome.tabs.remove(tabs[i].id);
+					}
+				});
+			}
+		});
+	});
+};

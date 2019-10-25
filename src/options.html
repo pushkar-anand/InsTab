@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InsTab: Options</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+          integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/options.css"/>
+</head>
+<body>
+<div class="container" id="ext-option">
+    <h3>Settings: </h3>
+    <form class="options-form" action="#" id="options-form">
+        <div class="switch">
+            <label>
+                Close current set of tabs when saving
+                <input type="checkbox" name="close-current-save" />
+                <span class="lever"></span>
+            </label>
+        </div>
+        <div class="btn-wrapper">
+            <button class="btn btn-small btn-flat right" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+<script src="js/ext/jquery-3.4.1.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+        integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>-->
+<script src="js/options.js"></script>
+</body>
+</html>
