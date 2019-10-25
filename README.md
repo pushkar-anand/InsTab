@@ -7,3 +7,6 @@ This chrome extension allows you quickly save a list of open tabs and allows res
 3. Turn on developer mode.
 4. Click on Load Unpacked and select the unzipped code of this repo.
 5. Check the extension in the browser address bar.
+
+# Contributing 
+To start contributing to the repo checkout [CONTRIBUTING.md](https://github.com/pushkar-anand/InsTab/blob/develop/CONTRIBUTING.md)
