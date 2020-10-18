@@ -1,22 +1,106 @@
-#ext-popup {
+:root {
+    --theme-color: #06044e;
+    --light-color: #484693;
+
+}
+.container {
     width: 300px;
-    height: auto;
-}
-.btn-wrapper {
-    padding: 20px;
-}
-
-/*li.collection-item:hover {
-    cursor: pointer;
-    background-color: antiquewhite;
-}*/
-
-.delete-icon i:hover {
-    color: red;
-    cursor: pointer;
+    height: 450px;
+    padding: 0;
+    background-color: white;
 }
 
-.load-icon i:hover {
-    color: green;
+.logo {
+    width: auto;
+    height: fit-content;
+    background-color: var(--theme-color);
+    padding: inherit;
+    border-radius: 0 0 0 45px;
+
+}
+
+.item {
+    box-shadow: 0 4px 8px 0 rgba(34, 36, 36, 0.2);
+    width: auto;
+    background-color: #efe2ef;
+    align-content: center;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.item:hover {
+    box-shadow: 0 6px 14px 0 rgba(31, 33, 33, 0.2);
+}
+
+.content {
+    padding: 10px;
+    font-size: 15px;
+    font-family: Ubuntu;
+}
+
+i {
+    float: right;
+    color: #262222;
+
+}
+
+i:hover {
     cursor: pointer;
 }
+
+.tab_wrap {
+    padding: 10px;
+}
+
+h4 {
+    text-align: center;
+    font-family: Aclonica;
+    color: aliceblue;
+    margin: 0;
+    padding: 30px 20px 30px 20px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.btn-floating i {
+    color: #f8eff4;
+}
+
+button.btn-floating {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: var(--theme-color);
+}
+
+.btn-floating:hover, .btn-floating:active {
+    background-color: var(--light-color);
+}
+
+.nav {
+    padding: 5px;
+}
+
+.empty-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+
+
+
+
