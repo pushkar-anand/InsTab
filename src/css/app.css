@@ -4,7 +4,7 @@
 
 }
 .container {
-    width: 300px;
+    width: 350px;
     height: 450px;
     padding: 0;
     background-color: white;
@@ -36,6 +36,9 @@
     padding: 10px;
     font-size: 15px;
     font-family: Ubuntu;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 i {
@@ -50,6 +53,9 @@ i:hover {
 
 .tab_wrap {
     padding: 10px;
+    height: 350px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 h4 {
@@ -74,7 +80,7 @@ footer {
 
 button.btn-floating {
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-right: 18px;
     background-color: var(--theme-color);
 }
 
