@@ -1,3 +1,13 @@
+const listCard = (state) => {
+    return `
+    <div class="item">
+        <div class="content" id="${state.stateID}">
+            ${state.stateName} <i class="material-icons" id="del-${state.stateID}">delete</i>
+        </div>
+     </div>
+    `
+}
+
 $(document).ready(() => {
     loadStateList();
 });
@@ -24,22 +34,7 @@ const loadStateList = () => {
             $('.empty-list').hide();
             $('#state-list').show();
             states.forEach((state) => {
-                /*				const apn = `<li class="collection-item">
-                                                <div class="state-item">
-                                                        <span>${state.stateName}</span>
-                                                        <a class="load-icon" id="${state.stateID}">
-                                                            <i class="material-icons">send</i>
-                                                        </a>
-                                                        <a class="secondary-content delete-icon" id="del-${state.stateID}">
-                                                            <i class="material-icons">delete</i>
-                                                        </a>
-                                                </div>
-                                            </li>`;*/
-                const apn = `<div class="item">
-            <div class="content" id="${state.stateID}">
-                ${state.stateName} <i class="material-icons" id="del-${state.stateID}">delete</i>
-            </div>
-        </div>`;
+                const apn = listCard(state);
                 // noinspection JSJQueryEfficiency
                 let selector = $(`#${state.stateID}`);
                 if (!(selector.length)) {
