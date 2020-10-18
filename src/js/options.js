@@ -3,8 +3,10 @@ const EXIT_ON_SAVE_KEY = 'exit_on_save';
 
 $(document).ready(() => {
 	getSavedOptions( (options) => {
-		console.log('Saved options', options);
-		$('input[name=close-current-save]').prop('checked', options[EXIT_ON_SAVE_KEY]);
+		if(options !== undefined) {
+			console.log('Saved options', options);
+			$('input[name=close-current-save]').prop('checked', options[EXIT_ON_SAVE_KEY]);
+		}
 	})
 });
 
