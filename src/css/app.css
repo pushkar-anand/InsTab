@@ -3,6 +3,7 @@
     --light-color: #484693;
 
 }
+
 .container {
     width: 350px;
     height: 450px;
@@ -16,26 +17,27 @@
     background-color: var(--theme-color);
     padding: inherit;
     border-radius: 0 0 0 45px;
+    box-shadow: 4px 3px 5px 1px #b7b7b8;
 
 }
 
 .item {
-    box-shadow: 0 4px 8px 0 rgba(34, 36, 36, 0.2);
+    box-shadow: 4px 3px 5px 0 #CFCDD6;
     width: auto;
-    background-color: #efe2ef;
+    background-color: #dae3f8;
     align-content: center;
     border-radius: 2px;
     margin-bottom: 10px;
 }
 
 .item:hover {
-    box-shadow: 0 6px 14px 0 rgba(31, 33, 33, 0.2);
+    box-shadow: 6px 4px 5px 0 #B3B0BA;
 }
 
 .content {
     padding: 10px;
     font-size: 15px;
-    font-family: Ubuntu;
+    font-family: Ubuntu sans-serif;
     width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -60,7 +62,7 @@ i:hover {
 
 h4 {
     text-align: center;
-    font-family: Aclonica;
+    font-family: Aclonica sans-serif;
     color: aliceblue;
     margin: 0;
     padding: 30px 20px 30px 20px;
@@ -84,8 +86,12 @@ button.btn-floating {
     background-color: var(--theme-color);
 }
 
-.btn-floating:hover, .btn-floating:active {
+.btn-floating:hover {
     background-color: var(--light-color);
+}
+
+.btn-floating:focus, .btn-floating:active {
+    background-color: var(--theme-color);
 }
 
 .nav {
