@@ -3,38 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>InsTab: Save All</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Aclonica" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
           integrity="sha256-OweaP/Ic6rsV+lysfyS4h+LM6sRwuO3euTYfr6M124g=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-<div class="container" id="ext-popup">
-    <div id="main">
-        <div class="row">
-            <h4>Saved states</h4>
-        </div>
-        <div class="row">
-            <p class="empty-list">No saved states.</p>
-            <ul class="collection" id="state-list">
-            </ul>
-        </div>
-        <div class="row">
-            <div class="btn-wrapper">
-                <button class="btn" id="save-btn">Save Current</button>
-            </div>
-            <div class="btn-wrapper">
-                <button class="btn" id="reset-btn">Reset</button>
-            </div>
-        </div>
+<div class="container">
+    <div class="logo">
+        <h4> Tab manager </h4>
     </div>
-
+    <div class="empty-list">
+        <p> Ouhh...Its empty in here! </p>
+    </div>
+    <div class="tab_wrap" id="state-list">
+        <!--the list will be inserted here-->
+    </div>
+    <footer>
+        <button class="btn-floating waves-effect waves-light" id="save-btn"><i class="material-icons">add</i></button>
+    </footer>
 </div>
+
+
 <script src="js/ext/jquery-3.4.1.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
         integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous"></script>-->
+<script src="js/ext/swal-cdn.js"></script>
 <script src="js/tabDB.js"></script>
 <script src="js/utils.js"></script>
+<script src="js/options.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

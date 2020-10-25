@@ -1,17 +1,33 @@
+const listCard = (state) => {
+	return `
+    <div class="item">
+        <div class="content" id="${state.stateID}">
+            ${state.stateName} <i class="material-icons delete-icon" id="del-${state.stateID}">delete</i>
+        </div>
+     </div>
+    `
+}
+
 $(document).ready(() => {
 	loadStateList();
 });
 
 $("#save-btn").click(() => {
-	const stateName = prompt("Save as?");
-	saveTabs(stateName);
+	swal("Save Tabs?", {
+		content: "input", buttons: ["No", "Save"],
+	}).then((stateName) => {
+		if (stateName !== null && stateName !== "" && stateName.trim() !== "") {
+			saveTabs(stateName);
+		}
+	});
 });
 
 $("#reset-btn").click(() => {
 	tabDB.reset();
 });
 
-chrome.storage.onChanged.addListener(() => {
+
+chrome.storage.onChanged.addListener((changes, area) => {
 	loadStateList();
 });
 
@@ -21,17 +37,7 @@ const loadStateList = () => {
 			$('.empty-list').hide();
 			$('#state-list').show();
 			states.forEach((state) => {
-				const apn = `<li class="collection-item">
-								<div class="state-item">
-										<span>${state.stateName}</span>
-										<a class="load-icon" id="${state.stateID}">
-											<i class="material-icons">send</i>
-										</a>
-										<a class="secondary-content delete-icon" id="del-${state.stateID}">
-											<i class="material-icons">delete</i>
-										</a>
-								</div>
-							</li>`;
+				const apn = listCard(state);
 				// noinspection JSJQueryEfficiency
 				let selector = $(`#${state.stateID}`);
 				if (!(selector.length)) {
@@ -42,8 +48,8 @@ const loadStateList = () => {
 					loadState(state.stateID);
 				});
 				$(`#del-${state.stateID}`).click(() => {
+					$(`#${state.stateID}`).parent().remove();
 					tabDB.remove(state.stateID);
-					loadStateList();
 				});
 			});
 		} else {
@@ -71,8 +77,7 @@ const saveTabs = (stateName) => {
 			stateName: stateName,
 			tabs: tabsData
 		};
-		console.log(stateData);
-		tabDB.save(stateData);
+		saveState(stateData);
 	});
 };
 
@@ -88,5 +93,21 @@ const loadState = (stateID) => {
 			createData.url.push(tab.url);
 		});
 		chrome.windows.create(createData);
+	});
+};
+
+const saveState = (stateData) => {
+	console.log(stateData);
+	tabDB.save(stateData, () => {
+		getSavedOptions((options) => {
+			if (options[EXIT_ON_SAVE_KEY] === true) {
+				chrome.tabs.query({}, function (tabs) {
+					chrome.tabs.create({});
+					for (let i = 0; i < tabs.length; i++) {
+						chrome.tabs.remove(tabs[i].id);
+					}
+				});
+			}
+		});
 	});
 };

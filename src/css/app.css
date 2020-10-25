@@ -1,22 +1,123 @@
-#ext-popup {
-    width: 300px;
-    height: auto;
-}
-.btn-wrapper {
-    padding: 20px;
+:root {
+    --theme-color: #06044e;
+    --light-color: #484693;
+
 }
 
-/*li.collection-item:hover {
+.container {
+    width: 350px;
+    height: 450px;
+    padding: 0;
+    background-color: white;
+}
+
+.logo {
+    width: auto;
+    height: fit-content;
+    background-color: var(--theme-color);
+    padding: inherit;
+    border-radius: 0 0 0 45px;
+    box-shadow: 4px 3px 5px 1px #b7b7b8;
+
+}
+
+.item {
+    box-shadow: 4px 3px 5px 0 #CFCDD6;
+    width: auto;
+    background-color: #dae3f8;
+    align-content: center;
+    border-radius: 2px;
+    margin-bottom: 10px;
     cursor: pointer;
-    background-color: antiquewhite;
-}*/
+}
 
-.delete-icon i:hover {
+.item:hover {
+    box-shadow: 6px 4px 5px 0 #B3B0BA;
+}
+
+.content {
+    padding: 10px;
+    font-size: 15px;
+    font-family: Ubuntu;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+i {
+    float: right;
+    color: #262222;
+
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+.tab_wrap {
+    padding: 10px;
+    height: 350px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.delete-icon:hover {
     color: red;
-    cursor: pointer;
 }
 
-.load-icon i:hover {
-    color: green;
-    cursor: pointer;
+h4 {
+    text-align: center;
+    font-family: Aclonica;
+    color: aliceblue;
+    margin: 0;
+    padding: 30px 20px 30px 20px;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.btn-floating i {
+    color: #f8eff4;
+}
+
+button.btn-floating {
+    margin-bottom: 10px;
+    margin-right: 18px;
+    background-color: var(--theme-color);
+}
+
+.btn-floating:hover {
+    background-color: var(--light-color);
+}
+
+.btn-floating:focus, .btn-floating:active {
+    background-color: var(--theme-color);
+}
+
+.nav {
+    padding: 5px;
+}
+
+.empty-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+
+
+
+
