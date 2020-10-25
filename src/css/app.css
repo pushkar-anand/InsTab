@@ -37,7 +37,7 @@
 .content {
     padding: 10px;
     font-size: 15px;
-    font-family: Ubuntu sans-serif;
+    font-family: Ubuntu;
     width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,7 +62,7 @@ i:hover {
 
 h4 {
     text-align: center;
-    font-family: Aclonica sans-serif;
+    font-family: Aclonica;
     color: aliceblue;
     margin: 0;
     padding: 30px 20px 30px 20px;

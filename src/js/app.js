@@ -13,10 +13,16 @@ $(document).ready(() => {
 });
 
 $("#save-btn").click(() => {
-    const stateName = prompt("Save as?");
-    if (stateName !== null && stateName !== "" && stateName.trim() !== "") {
-        saveTabs(stateName);
-    }
+    swal("Save Tabs?", {
+        content: "input",buttons: ["No", "Save"],
+
+    })
+        .then((stateName) => {
+            if (stateName !== null && stateName !== "" && stateName.trim() !== "") {
+                saveTabs(stateName);
+            }
+        });
+
 });
 
 $("#reset-btn").click(() => {
