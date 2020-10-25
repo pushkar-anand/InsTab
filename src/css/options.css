@@ -3,7 +3,16 @@
 }
 
 .options-form {
-    padding: 10px;
+    padding: 15px;
+    text-align: center;
+}
+h3{
+    font-family: Audiowide;
+    text-align: center;
+}
+hr{
+    border-width: 1px;
+    border-style: dot-dash;
 }
 
 .switch label {
@@ -11,6 +20,15 @@
     font-size: medium;
 }
 
-.btn-wrapper {
-    padding: 10px;
+.btn-small{
+    font-weight: bold;
+    background-color: #b8d4d5;
+    position: relative;
+    margin-top: 5%;
+    margin-right: 47%;
+}
+.btn-small:hover{
+    box-shadow: 4px 3px 5px 0 #bdbdbf;
+    background-color: #4e9fc6;
+    color: white;
 }

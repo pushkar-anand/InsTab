@@ -5,9 +5,9 @@
   "manifest_version": 2,
   "browser_action": {
     "default_icon": {
-      "16": "assets/icons/16x16.png",
-      "24": "assets/icons/24x24.png",
-      "32": "assets/icons/32x32.png"
+      "16": "assets/icons/16.png",
+      "24": "assets/icons/24.png",
+      "32": "assets/icons/32.png"
     },
     "default_title": "InsTab",
     "default_popup": "src/popup.html"
