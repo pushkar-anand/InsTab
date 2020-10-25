@@ -28,6 +28,7 @@
     align-content: center;
     border-radius: 2px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .item:hover {
@@ -58,6 +59,10 @@ i:hover {
     height: 350px;
     overflow: hidden;
     overflow-y: scroll;
+}
+
+.delete-icon:hover {
+    color: red;
 }
 
 h4 {
