@@ -1,6 +1,6 @@
 {
   "name": "InsTab",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Save the current state of tabs open in chrome.",
   "manifest_version": 2,
   "browser_action": {
