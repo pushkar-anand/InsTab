@@ -42,6 +42,7 @@
     width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: bold;
 }
 
 i {
